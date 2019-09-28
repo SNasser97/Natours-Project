@@ -1,0 +1,96 @@
+/* CSS BUTTON */
+.btn {
+	&,
+	&:link,
+	&:visited { /* pseudo-class, user state e.g. select checkbox */
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: 1.5rem 4rem;
+		display: inline-block;
+		border-radius: 10rem;
+		transition: all .2s;
+		position: relative;
+		font-size: 1.6rem; 
+
+		//change for <button> element
+		border:none;
+		cursor:pointer;
+	}
+	/* CSS BUTTON HOVER */
+	&:hover{
+		transform: translateY(-0.3rem);
+		box-shadow: 0 1rem 2rem rgba($colour-black,.2);
+		&::after{ /* hover and after we want to show this effect */
+		transform: scaleX(1.4) scaleY(1.6);
+		opacity: 0;
+		}
+	}
+	&:active,
+	&:focus { /* click move down -1px, push down effect */
+		transform: translateY(-0.1rem);
+		box-shadow: 0 .5rem 1rem rgba($colour-black,.2);
+		outline:none;
+	}
+	&--white {
+		background-color: $colour-white;
+		color:$colour-grey-dark;
+
+		&::after {
+			background-color: $colour-white;
+		}
+	}
+	&--green {
+		background-color: $colour-primary;
+		color:$colour-white;
+		&::after {
+			background-color: $colour-primary;
+		}
+	}
+	&::after {
+		content:"";	
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		border-radius: 10rem;
+		position: absolute;
+		top:0;
+		left:0;
+		z-index: -1;
+		transition: all .4s; 
+	}
+	&--animated {
+		animation: moveInBottom 0.5s ease-out 0.75s;
+		animation-fill-mode: backwards;
+	 /* style applied as stated in animation moveInBottom */
+	}
+}
+
+.btn-text{
+	&:link,&:visited{
+		font-size: $default-font-size;
+		color:$colour-primary;
+		display: inline-block;
+		text-decoration: none;
+		padding: .3rem;
+		border-bottom: 1px solid $colour-primary;
+		transition: all .2s;
+	}
+	&::after {
+		content: "\2192";
+		color: transparent;
+	}
+	&:hover {
+		background-color: $colour-primary;
+		color:$colour-white;  
+		box-shadow: 0 1rem 2rem rgba($colour-black, .15);
+		transform: translateY(-2px);
+		&::after {
+			content:"\2192";
+			color:$colour-white;
+		}
+	}
+	&:active {
+		box-shadow: 0 .5rem 2rem rgba($colour-black, .15);
+		transform: translateY(0);
+	}
+}

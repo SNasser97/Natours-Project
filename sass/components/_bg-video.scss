@@ -1,0 +1,30 @@
+.bg-video {
+	position: absolute;
+	top:0;
+	left:0;
+	height: 100%;
+	width:100%;
+	z-index: -1;
+	opacity: .15;
+	overflow: hidden;
+	
+	&::before { // add colour overlay to video
+		content:"";
+		background: linear-gradient(to right bottom, 
+			rgba($colour-primary-light, .2), 
+			rgba($colour-primary-dark, 1));
+		position: absolute;
+		top:0;
+		left:0;
+		height: 100%;
+		width:100%;
+		overflow: hidden;
+	}
+
+	&__content {
+		height: 100%;
+		width: 100%;
+		object-fit: cover; // works with img or videos
+		// video will fill the entire section, while keeping aspect ratio
+	}
+}
