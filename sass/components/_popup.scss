@@ -29,12 +29,20 @@
 	&__left{
 		width:33.333%;
 		display: table-cell;
+			@include respond(tab-port) {
+				display: block;
+			}
 	}
 	&__right{
 		width:66.667%;
 		display: table-cell;
 		vertical-align: middle;
 		padding: 3rem 5rem;
+			@include respond(tab-port) {
+				width: 100%;
+				display: inline-block;
+				padding: 2rem 4rem;
+			}
 	}
 	&__img {
 		display: block;

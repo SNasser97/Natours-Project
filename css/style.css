@@ -642,11 +642,19 @@ body {
   .popup__left {
     width: 33.333%;
     display: table-cell; }
+    @media (max-width: 56.25em) {
+      .popup__left {
+        display: block; } }
   .popup__right {
     width: 66.667%;
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem; }
+    @media (max-width: 56.25em) {
+      .popup__right {
+        width: 100%;
+        display: inline-block;
+        padding: 2rem 4rem; } }
   .popup__img {
     display: block;
     width: 100%; }
