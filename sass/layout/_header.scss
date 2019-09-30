@@ -1,7 +1,7 @@
 /* HERO SECTION */
 
 .header {
-	height: 95vh;
+	height: 85vh;
 	background-image: linear-gradient(to right bottom, 
 		rgba($colour-primary-light, 0.8), 
 		rgba($colour-primary-dark, 0.8)), 
@@ -12,6 +12,12 @@
 	clip-path: polygon(0 0 , 100% 0, 100% 75vh , 0 100%);
 	position: relative;
 	
+	@supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+		-webkit-clip-path: polygon(0 0 , 100% 0, 100% 75vh , 0 100%);
+		clip-path: polygon(0 0 , 100% 0, 100% 75vh , 0 100%);
+		height:95vh;
+	}
+
 	@include respondImg { 
 		background-image: linear-gradient(to right bottom, 
 		rgba($colour-primary, 0.8), 

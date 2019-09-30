@@ -63,7 +63,10 @@ ORDER - Base > Typography > layout > grid > page layout > components
 // 192 reference e.g. retina displays
 // min-res:192 AND min-width: 600px , OR min-width:2000px;
 @mixin respondImg {
-		@media (min-resolution:192dpi) and (min-width: 37.5em), (min-width: 125em) {
+		// -webkit- for safari support
+		@media (min-resolution:192dpi) and (min-width: 37.5em),
+			   (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), 
+			   (min-width: 125em) {
 			@content;
 		}
 }
