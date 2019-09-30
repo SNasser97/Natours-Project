@@ -5,13 +5,19 @@
 	background-image: linear-gradient(to right bottom, 
 		rgba($colour-primary-light, 0.8), 
 		rgba($colour-primary-dark, 0.8)), 
-	    url(../img/hero.jpg);
+	    url(../img/hero-small.jpg);
 	background-size: cover;
 	background-position: center;
 	-webkit-clip-path: polygon(0 0 , 100% 0, 100% 75vh , 0 100%);
 	clip-path: polygon(0 0 , 100% 0, 100% 75vh , 0 100%);
 	position: relative;
 	
+	@include respondImg { 
+		background-image: linear-gradient(to right bottom, 
+		rgba($colour-primary, 0.8), 
+		rgba($colour-primary-dark, 0.8)), 
+	    url(../img/hero.jpg);
+	}
 
 	@include respond(tab-port) {
 		-webkit-clip-path: polygon(0 0 , 100% 0, 100% 80vh , 0 100%);

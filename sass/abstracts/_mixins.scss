@@ -55,7 +55,16 @@ ORDER - Base > Typography > layout > grid > page layout > components
         @media (min-width: 112.5em) { @content; } //1800px 1800px/16px
     }
 }
-
 // ems/rems -> not affected by root font size setting (html{62.5%;})
 // so 1em/1rem are equal to default font-size => 16px
 // ems -> use for media queries
+
+// RESPONSIVE IMG CSS
+// 192 reference e.g. retina displays
+// min-res:192 AND min-width: 600px , OR min-width:2000px;
+@mixin respondImg {
+		@media (min-resolution:192dpi) and (min-width: 37.5em), (min-width: 125em) {
+			@content;
+		}
+}
+

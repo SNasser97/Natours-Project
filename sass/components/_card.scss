@@ -28,7 +28,7 @@
 					to right bottom,
 					$colour-secondary-light, 
 					$colour-secondary-dark);
-				
+					
 			}
 			&-2{
 				background-image: linear-gradient(
@@ -61,25 +61,43 @@
 		clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 		border-top-left-radius: 3px;
 		border-top-right-radius: 3px;
-
+	
 
 		&--1{
 			background-image: linear-gradient(to right bottom, 
 				$colour-secondary-light, 
 				$colour-secondary-dark), 
 			    url(../img/nat-5.jpg);
+			    @include respondImg {
+			    	background-image: linear-gradient(to right bottom, 
+					$colour-secondary-light, 
+					$colour-secondary-dark), 
+				    url(../img/nat-5-large.jpg);
+			    }
 		}
 		&--2{
 			background-image: linear-gradient(to right bottom, 
 				$colour-primary-light, 
 				$colour-primary-dark), 
 			    url(../img/nat-6.jpg);
+			    @include respondImg {
+			    	background-image: linear-gradient(to right bottom, 
+					$colour-primary-light, 
+					$colour-primary-dark), 
+				    url(../img/nat-6-large.jpg);
+			    }
 		}
 		&--3{
 			background-image: linear-gradient(to right bottom, 
 				$colour-tertiary-light, 
 				$colour-tertiary-dark), 
 			    url(../img/nat-7.jpg);
+			    @include respondImg {
+			    	background-image: linear-gradient(to right bottom, 
+					$colour-tertiary-light, 
+					$colour-tertiary-dark), 
+				    url(../img/nat-7-large.jpg);
+			    }
 		}
 	}
 	&__heading {
