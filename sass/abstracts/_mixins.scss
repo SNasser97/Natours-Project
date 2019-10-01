@@ -43,16 +43,16 @@ ORDER - Base > Typography > layout > grid > page layout > components
 // check if device is phone, apply these breakpoint styles
 @mixin respond($breakpoint) {
 	 @if $breakpoint == phone {
-        @media (max-width: 37.5em) { @content; } //600px 600px/16px
+        @media only screen and (max-width: 37.5em) { @content; } //600px 600px/16px
     }
     @if $breakpoint == tab-port {
-        @media (max-width: 56.25em) { @content; } //900px 900px/16px
+        @media only screen and (max-width: 56.25em) { @content; } //900px 900px/16px
     }
     @if $breakpoint == tab-land {
-        @media (max-width: 75em) { @content; } //1200px  1200px/16px
+        @media only screen and (max-width: 75em) { @content; } //1200px  1200px/16px
     }
     @if $breakpoint == big-desktop {
-        @media (min-width: 112.5em) { @content; } //1800px 1800px/16px
+        @media only screen and (min-width: 112.5em) { @content; } //1800px 1800px/16px
     }
 }
 // ems/rems -> not affected by root font size setting (html{62.5%;})
@@ -64,9 +64,9 @@ ORDER - Base > Typography > layout > grid > page layout > components
 // min-res:192 AND min-width: 600px , OR min-width:2000px;
 @mixin respondImg {
 		// -webkit- for safari support
-		@media (min-resolution:192dpi) and (min-width: 37.5em),
-			   (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), 
-			   (min-width: 125em) {
+		@media only screen and (min-resolution:192dpi) and (min-width: 37.5em),
+			   only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), 
+			   only screen and (min-width: 125em) {
 			@content;
 		}
 }

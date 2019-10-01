@@ -35,6 +35,11 @@ body {
 	}
 }
 
+::selection {
+	background-color: $colour-primary; 
+	color:$colour-white;
+}
+
 /* change px to rem, simple way to reduce or increase size */
 /* 10 / 16 = 0.625 * 100 */  
 /* default is 16px */
